@@ -9,16 +9,29 @@ import reel from '../reel.png';
 import reelBack from '../reelBack.jpg';
 import './App.css';
 
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import NavToShow from './NavToShow';
+import ShowTime from './ShowTime';
+
 
 
 const Presentation = () => {
 
     const [counter, setCounter] = useState([snow,snow2,snow3,snow4,snow5]);
     
+    
+
     return(
+
+    <div className ="presentation">
         <div className= "container" >
         <h1>presentationComponent</h1>
         <h3>here are your Backdrops:</h3>
+        <Router>
+        <NavToShow/>
+        <Route path= "/ShowTime" component = {ShowTime} />
+        </Router>
+        
             <div className = "imageStyle" >
             <img src ={reel} height = "80" width = "600" />
             {counter.map((ki, index)=>
@@ -26,6 +39,7 @@ const Presentation = () => {
             )}
             </div>
 
+        </div>
     </div>
     );
 

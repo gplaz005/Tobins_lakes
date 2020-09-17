@@ -9,7 +9,7 @@ const Nav = () => (
     <div >
         <ul>
             <Link to="/presentation">
-            <li>presentation</li>
+            <li>presentationfromNav</li>
             </Link>
         </ul>
     </div>

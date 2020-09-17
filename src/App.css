@@ -1,11 +1,21 @@
+.showTime{
+    position: absolute;
+    
+}
 
+.presentation{
+    position: absolute;
+    top:0;
+}
 
 .container{
     
     background-image: url(../reelBack.jpg);
      /* Full height */
      height: 100%; 
-
+     
+     
+    
      /* Center and scale the image nicely */
      background-position: center;
      background-repeat: no-repeat;
