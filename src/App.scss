@@ -1,0 +1,164 @@
+.showTime{
+    position: absolute; //if relative it shows previews component
+    //border: 1px solid red;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    top:0;
+    background: black;
+    border: 1px dotted black;
+    
+
+}
+.showTime::-webkit-scrollbar {
+    display: none;
+}
+
+.backdrop{
+    //border: 1px solid blue;
+    min-width: 100%;
+    height: 80%;
+    color: cornsilk;
+    overflow: hidden;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
+
+    border: 1px dotted black;
+ 
+}
+.backdrop::-webkit-scrollbar {
+    display: none;
+}
+
+#goleft{
+    position: absolute;
+    top:50%; 
+    left: 0;
+    transform: translateY(-50%);
+    width: 10%;
+    height: 80%;
+    background: none;
+    color: transparent;//hide font
+    border: none;
+    outline: none;
+}
+
+#goright{
+    position: absolute;
+    top:50%; 
+    right: 0;
+    transform: translateY(-50%);
+    width: 10%;
+    height: 80%;
+    background: none;
+    color:transparent;//hide font
+    border: none;
+    outline: none;
+}
+
+.presentation{
+    position: absolute;
+    top:0;
+    left: 0;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
+}
+.presentation::-webkit-scrollbar {
+    display: none;
+}
+
+.container{
+    
+    background-image: url(../stagePresentation.jpg);
+     /* Full height */
+     height: 100%; 
+     width: 100%;
+     
+     
+     
+    
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.imageStyle{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 100%;
+}
+
+
+
+.AppBack{
+ 
+    height: 100%; 
+    width: 100%;
+     
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.logoHome{
+    //transition: .5s ease;
+    //opacity: 0;
+    position: absolute;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+  }
+
+  .welcome{
+    //transition: .5s ease;
+    //opacity: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    color: #f0f7f1; 
+    font-family: 'Rouge Script', cursive; 
+    font-size: 30px; font-weight: normal; 
+    line-height: 55px; margin: 0 0 50px; 
+    
+    text-shadow: 1px 1px 2px #f0f4f5; 
+  }
+  .welcomeLink{
+    //transition: .5s ease;
+    //opacity: 0;
+    //position: absolute;
+    top: 80%;
+    left: 50%;
+    font-size: 30px;
+    text-align: center; 
+  }
+
+  .presentationTitle{
+    color: #0e110e; 
+    font-family: 'Rouge Script', cursive; 
+    font-size: 50px; font-weight: normal; 
+    line-height: 55px; margin: 0 0 50px; 
+  }
+.App::-webkit-scrollbar {
+    display: none;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
+}
+.App{
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
+}

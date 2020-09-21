@@ -9,7 +9,7 @@ const Nav = () => (
     <div >
         <ul>
             <Link to="/presentation">
-            <li>presentationfromNav</li>
+            <li>Click here to see your backsrops</li>
             </Link>
         </ul>
     </div>

@@ -10,7 +10,7 @@ const NavToShow = () => (
     <div >
         <ul>
             <Link to="/ShowTime">
-            <li>click here to start presentation</li>
+            <li>click here to start your presentation</li>
             </Link>
             {/*<Link to="ShowTime"  onClick={(event) => {event.preventDefault(); window.open("ShowTime");}}>
                 click to show

@@ -7,26 +7,21 @@ import snow4 from '../snow4.png';
 import snow5 from '../snow5.png';
 import reel from '../reel.png';
 import reelBack from '../reelBack.jpg';
-import './App.css';
+import './App.scss';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavToShow from './NavToShow';
 import ShowTime from './ShowTime';
 
-
-
 const Presentation = () => {
 
     const [counter, setCounter] = useState([snow,snow2,snow3,snow4,snow5]);
     
-    
-
     return(
 
     <div className ="presentation">
         <div className= "container" >
-        <h1>presentationComponent</h1>
-        <h3>here are your Backdrops:</h3>
+        <h1 className = "presentationTitle">Here are your backdrops</h1>
         <Router>
         <NavToShow/>
         <Route path= "/ShowTime" component = {ShowTime} />
