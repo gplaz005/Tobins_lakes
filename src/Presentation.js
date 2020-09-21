@@ -6,7 +6,7 @@ import snow3 from '../snow3.png';
 import snow4 from '../snow4.png';
 import snow5 from '../snow5.png';
 import reel from '../reel.png';
-import reelBack from '../reelBack.jpg';
+
 import './App.scss';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
