@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
 .showTime{
     position: absolute; //if relative it shows previews component
     //border: 1px solid red;
@@ -13,12 +17,9 @@
     top:0;
     background: black;
     border: 1px dotted black;
-    
 
 }
-.showTime::-webkit-scrollbar {
-    display: none;
-}
+
 
 .backdrop{
     //border: 1px solid blue;
@@ -26,15 +27,12 @@
     height: 80%;
     color: cornsilk;
     overflow: hidden;
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden;
+    
 
     border: 1px dotted black;
  
 }
-.backdrop::-webkit-scrollbar {
-    display: none;
-}
+
 
 #goleft{
     position: absolute;
@@ -66,11 +64,7 @@
     position: absolute;
     top:0;
     left: 0;
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden;
-}
-.presentation::-webkit-scrollbar {
-    display: none;
+    
 }
 
 .container{
@@ -153,12 +147,3 @@
     font-size: 50px; font-weight: normal; 
     line-height: 55px; margin: 0 0 50px; 
   }
-.App::-webkit-scrollbar {
-    display: none;
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden;
-}
-.App{
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden;
-}
