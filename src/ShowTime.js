@@ -5,11 +5,11 @@ import Presentation from './Presentation';
 import Nav from './Nav';
 import './App.scss';
 
-import snow from '../snow.png';
-import snow2 from '../snow2.png';
-import snow3 from '../snow3.png';
-import snow4 from '../snow4.png';
-import snow5 from '../snow5.png';
+import snow from './pictures/snow.png';
+import snow2 from './pictures/snow2.png';
+import snow3 from './pictures/snow3.png';
+import snow4 from './pictures/snow4.png';
+import snow5 from './pictures/snow5.png';
 
 
 const ShowTime = () => {
@@ -47,9 +47,6 @@ const ShowTime = () => {
 
 
 }
-
-    
-    
 
 
 export default hot(module)(ShowTime);

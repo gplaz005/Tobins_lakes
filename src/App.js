@@ -5,14 +5,14 @@ import Presentation from './Presentation';
 import Nav from './Nav';
 import './App.scss';
 
-import tblogo from '../tblogo.png';
-import stage from '../stage.jpg'
+import tblogo from './pictures/tblogo.png';
+import stage from './pictures/stage.jpg'
 
 
 const App = () => (
    
     
-    <div className = "example">
+    <div>
     <img src ={stage} className = "AppBack" />
         <img src ={tblogo} className = "logoHome" />
         
