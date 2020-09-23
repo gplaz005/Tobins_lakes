@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import { hot } from 'react-hot-loader';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Presentation from './Presentation';
-import Nav from './Nav';
+import {connect} from 'react-redux';
 import './App.scss';
 
 import snow from './pictures/snow.png';
@@ -12,9 +10,9 @@ import snow4 from './pictures/snow4.png';
 import snow5 from './pictures/snow5.png';
 
 
-const ShowTime = () => {
+const ShowTime = ({backdrops}) => {
 
-    const [backdrops, setCounter] = useState([snow,snow2,snow3,snow4,snow5]);
+    //const [backdrops, setCounter] = useState([snow,snow2,snow3,snow4,snow5]);
 
     const [axis, setAxis] = useState(0);
     const goLeft = () => {
@@ -43,10 +41,16 @@ const ShowTime = () => {
         
     </div>
     );
-    
-
 
 }
 
+const mapStateToProps = state => ({
+    backdrops: state.backdrops,
+});
 
-export default hot(module)(ShowTime);
+const mapDispatchToProps = dispatch => ({
+   
+});
+
+
+export default connect(mapStateToProps)(hot(module)(ShowTime));
