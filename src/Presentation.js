@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {connect} from 'react-redux';
 import { hot } from 'react-hot-loader';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import snow from './pictures/snow.png';
@@ -12,9 +13,9 @@ import NavToShow from './NavToShow'; //router
 import ShowTime from './ShowTime';
 import BackdropOnList from './BackdropOnList';
 
-const Presentation = () => {
+const Presentation = ({backdrops}) => {
 
-    const [counter, setCounter] = useState([snow,snow2,snow3,snow4,snow5]);
+
     
     return(
 
@@ -28,7 +29,7 @@ const Presentation = () => {
         
             <div className = "imageStyle" >
             <img src ={reel} height = "80" width = "600" />
-            {counter.map((ki, index)=>
+            {backdrops.map((ki, index)=>
             <BackdropOnList image = {ki} dropKey = {index} />
             )}
             </div>
@@ -39,6 +40,13 @@ const Presentation = () => {
 
 }
        
+const mapStateToProps = state => ({
+    backdrops: state.backdrops,
+});
+
+const mapDispatchToProps = dispatch => ({
+   
+});
 
 
-export default hot(module)(Presentation);
+export default connect(mapStateToProps)(hot(module)(Presentation));
