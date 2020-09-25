@@ -2,6 +2,36 @@
     display: none;
 }
 
+
+.buttons{
+  display:inline-block;
+  padding:0.46em 1.6em;
+  border:0.1em solid #000000;
+  margin:0 0.2em 0.2em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#fdfdfd;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  background-color:transparent;
+  text-align:center;
+  border-radius: 15px;
+  transition: all 0.15s;
+  }
+
+.buttons:hover{
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color:#FFFFFF;
+    border-color:#FFFFFF;
+    }
+    
+@media all and (max-width:30em){
+.buttons{
+      display:block;
+      margin:0.4em auto;
+  }
+}
 .showTime{
     position: absolute; //if relative it shows previews component
     //border: 1px solid red;
@@ -15,10 +45,21 @@
     overflow: hidden;
 
     top:0;
+    left: 0;
     background: black;
     border: 1px dotted black;
 
 }
+
+.sidePanel{
+  display: flex;
+}
+.sideButtons{
+  height: 300;
+  padding-left: 3em;
+  padding-top: 5em;
+}
+
 
 .backdrop{
     //border: 1px solid blue;
@@ -26,6 +67,7 @@
     height: 80%;
     color: cornsilk;
     overflow: hidden;
+    
  
     border: 1px dotted black;
 
@@ -59,23 +101,44 @@
 }
 
 .presentation{
+    background-image: url(./pictures/stagePresentation.jpg);
     position: absolute;
+    width: 100%;
     top:0;
-    left: 0;
-    
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
 }
+
+.presentationTitle{
+  
+
+  color: rgb(207, 151, 107);
+    font-family: 'Lobster', cursive;
+    font-size: 36px; 
+    font-weight: normal; 
+    line-height: 48px; 
+    margin: 0 0 18px; 
+    text-shadow: 4px 0 0 black;
+    text-align: center;
+    //position: fixed;
+}
+
+
 
 .container{
     
-    background-image: url(./pictures/stagePresentation.jpg);
+    
      /* Full height */
      height: 100%; 
      width: 100%;
-        
+    align-self: center;
+    justify-content: center;
      /* Center and scale the image nicely */
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
+   
 }
 
 .imageStyle{
@@ -84,25 +147,15 @@
   margin-right: auto;
   width: 50%;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-
-
-.AppBack{
- 
-    height: 100%; 
-    width: 100%;
-     
-     /* Center and scale the image nicely */
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
-}
 
 .logoHome{
     //transition: .5s ease;
     //opacity: 0;
-    position: absolute;
+    position: fixed;
     height: 120px;
     top: 50%;
     left: 50%;
@@ -113,37 +166,52 @@
   .welcome{
     //transition: .5s ease;
     //opacity: 0;
-    position: absolute;
-    top: 70%;
-    left: 50%;
+    position: relative;
+    top: 60%;
+    left: 70%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-
-    color: #f0f7f1; 
-    font-family: 'Rouge Script', cursive; 
-    font-size: 30px; font-weight: normal; 
-    line-height: 55px; margin: 0 0 50px; 
+     
+    color: rgb(207, 151, 107);
+    font-family: 'Lobster', cursive;
+    font-size: 36px; 
+    font-weight: normal; 
+    line-height: 48px; 
+    margin: 0 0 18px; 
+    text-shadow: 4px 0 0 black;
     
-    text-shadow: 1px 1px 2px #f0f4f5; 
   }
+
+
   .welcomeLink{
     //transition: .5s ease;
     //opacity: 0;
     //position: absolute;
-    top: 80%;
-    left: 50%;
+    top: 70%;
+    color:white;
+    list-style: none;
     font-size: 30px;
     text-align: center; 
   }
 
-  .presentationTitle{
-    color: #0e110e; 
-    font-family: 'Rouge Script', cursive; 
-    font-size: 50px; font-weight: normal; 
-    line-height: 55px; margin: 0 0 50px; 
+  .positionLink{
+    top: 70%;
+    left: 35%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    
   }
 
-  .sideButtons{
-      display: flex;
-      height: 300;
-  }
+  .AppBack{
+ 
+    height: 100%; 
+    width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(./pictures/purple_curtain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}

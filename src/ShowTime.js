@@ -3,16 +3,7 @@ import { hot } from 'react-hot-loader';
 import {connect} from 'react-redux';
 import './App.scss';
 
-import snow from './pictures/snow.png';
-import snow2 from './pictures/snow2.png';
-import snow3 from './pictures/snow3.png';
-import snow4 from './pictures/snow4.png';
-import snow5 from './pictures/snow5.png';
-
-
 const ShowTime = ({backdrops}) => {
-
-    //const [backdrops, setCounter] = useState([snow,snow2,snow3,snow4,snow5]);
 
     const [axis, setAxis] = useState(0);
     const goLeft = () => {
@@ -24,7 +15,6 @@ const ShowTime = ({backdrops}) => {
 
     return(
         <div className ="showTime">
-        {/*<img src ={snow}  />*/}
         
             {
                backdrops.map((item,index)=>

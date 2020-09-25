@@ -6,21 +6,20 @@ import Nav from './Nav';
 import './App.scss';
 
 import tblogo from './pictures/tblogo.png';
-import stage from './pictures/stage.jpg'
+
 
 
 const App = () => (
    
     
-    <div>
-    <img src ={stage} className = "AppBack" />
+    <div className = "AppBack">
         <img src ={tblogo} className = "logoHome" />
         
         <div className = "welcome">
             <h2>Hello Dennis, the show is about to start!</h2>
-     </div>
-     <div className = "welcomeLink">
-            <Router>
+        </div>
+        <div >
+        <Router>
         <Nav/>
         <Route path= "/presentation" component = {Presentation} />
         </Router>

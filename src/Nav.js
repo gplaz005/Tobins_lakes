@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom';
 
 
 const Nav = () => (
-    <nav>
+    <nav className = "positionLink">
     <div >
-        <ul>
+        <ul >
             <Link to="/presentation">
-            <li>Click here to see your backsrops</li>
+            <li className = "welcomeLink">Click here to see your backsrops</li>
             </Link>
         </ul>
     </div>

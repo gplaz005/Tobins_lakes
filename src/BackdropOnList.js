@@ -10,12 +10,13 @@ import {buttonDown} from './actions';
 const BackdropOnList = ({image,dropKey, upButtonClick, downButtonClik}) => (
    
     
-    <div className = "sideButtons">
+    <div className = "sidePanel">
         <img src ={image}  key = {dropKey} height = "300" width = "600" />
-        <div>
-        <button onClick = { () => upButtonClick(dropKey)}>Up</button>
-        <h3>{dropKey}</h3>
-        <button onClick ={() => downButtonClik(dropKey)}>down</button>
+    
+        <div className = "sideButtons">
+        <button className = "buttons" onClick = { () => upButtonClick(dropKey)}>UP</button>
+        <h3 style={{color: 'white', textAlign: 'center'}}>{dropKey}</h3>
+        <button className = "buttons"  onClick ={() => downButtonClik(dropKey)}>DOWN</button>
     
         </div>
     </div>

@@ -1,4 +1,3 @@
-import React ,{useState} from 'react';
 import snow from './pictures/snow.png';
 import snow2 from './pictures/snow2.png';
 import snow3 from './pictures/snow3.png';

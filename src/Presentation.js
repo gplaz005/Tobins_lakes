@@ -20,12 +20,15 @@ const Presentation = ({backdrops}) => {
     return(
 
     <div className ="presentation">
-        <div className= "container" >
-        <h1 className = "presentationTitle">Here are your backdrops</h1>
+        
+        <div className = "presentationTitle">  <h1>Backdrops Sequence</h1>
+        </div>
+        <div className = "welcomeLink">
         <Router>
         <NavToShow/>
         <Route path= "/ShowTime" component = {ShowTime} />
         </Router>
+        </div>
         
             <div className = "imageStyle" >
             <img src ={reel} height = "80" width = "600" />
@@ -33,8 +36,7 @@ const Presentation = ({backdrops}) => {
             <BackdropOnList image = {ki} dropKey = {index} />
             )}
             </div>
-
-        </div>
+        
     </div>
     );
 
