@@ -13,11 +13,15 @@ import NavToShow from './NavToShow'; //router
 import ShowTime from './ShowTime';
 import BackdropOnList from './BackdropOnList';
 
-const Presentation = ({backdrops}) => {
 
+import './firebase/config';
+
+
+const Presentation = ({backdrops}) => {
 
     
     return(
+        
 
     <div className ="presentation">
         

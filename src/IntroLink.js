@@ -1,0 +1,61 @@
+import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { hot } from 'react-hot-loader';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Presentation from './Presentation';
+import Nav from './Nav';
+import Intro from './Intro';
+import './App.scss';
+import './firebase/config';
+import NavToIntro from './NavToIntro';
+
+import {firestore} from './firebase/config';
+import firebase from 'firebase/app';
+
+
+
+const IntroLink = props => {
+
+    const [user, setUser] = useState("");
+    const [enroll,setenroll] = useState(false);
+
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        
+        const docRef = firebase.firestore().collection("users");
+        
+        docRef.get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                if(doc.data().userName == user){
+                    console.log("found")
+                    props.history.push("/Intro");
+                    setenroll(true);
+                }
+            }
+            );
+        });
+    }
+
+    return(
+    
+        <div>
+        <form onSubmit={handleSubmit}>
+        <label>
+            Frirst Name:
+            <input
+            type="text"
+            value={user}
+            onChange={e => setUser(e.target.value)}
+            />
+         </label>
+        <input type="submit" value="Submit" />
+        </form>       
+
+        
+
+     </div>
+    ) 
+}
+
+export default hot(module)(IntroLink);

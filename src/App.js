@@ -1,31 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { hot } from 'react-hot-loader';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link,Redirect,
+    useHistory,
+    useLocation,
+    BrowserRouter} from 'react-router-dom';
 import Presentation from './Presentation';
 import Nav from './Nav';
+import Intro from './Intro';
+import ShowTime from './ShowTime';
 import './App.scss';
+import './firebase/config';
+import NavToIntro from './NavToIntro';
 
-import tblogo from './pictures/tblogo.png';
-
+import {firestore} from './firebase/config';
+import firebase from 'firebase/app';
+import IntroLink from './IntroLink';
 
 
 const App = () => (
    
+
     
-    <div className = "AppBack">
-        <img src ={tblogo} className = "logoHome" />
         
-        <div className = "welcome">
-            <h2>Hello Dennis, the show is about to start!</h2>
-        </div>
-        <div >
-        <Router>
-        <Nav/>
-        <Route path= "/presentation" component = {Presentation} />
-        </Router>
-        </div>
-    </div>
+    <BrowserRouter>
+    <Switch>
+    <Route exact path="/" component={IntroLink}/>
+    <Route exact path= "/intro" component = {Intro} />
+    <Route path= "/presentation" component = {Presentation} />
+    <Route path= "/ShowTime" component = {ShowTime} />
+    </Switch>
+    </BrowserRouter>
     
+
+
     
 );
 

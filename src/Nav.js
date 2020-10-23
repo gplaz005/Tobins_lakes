@@ -9,7 +9,7 @@ const Nav = () => (
     <div >
         <ul >
             <Link to="/presentation">
-            <li className = "welcomeLink">Click here to see your backsrops</li>
+            <li className = "welcomeLink">Click here to see your backdrops</li>
             </Link>
         </ul>
     </div>

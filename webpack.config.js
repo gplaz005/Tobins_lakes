@@ -4,6 +4,7 @@ const webpack = require('webpack');
 module.exports = {
     entry: './src/index.js',
     mode: 'development',
+    
     module: {
         rules: [
             {
@@ -33,6 +34,7 @@ module.exports = {
                   'file-loader',
                 ],
               }
+              
         ]
     },
     resolve: { extensions: ['*', '.js', '.jsx'] },
@@ -41,6 +43,7 @@ module.exports = {
         publicPath: '/dist/',
         filename: 'bundle.js'
     },
+    devtool:'inline-source-map', //added after firebase install cuz bug with source map
     devServer: {
         contentBase: path.join(__dirname, 'public/'),
         port: 3000,

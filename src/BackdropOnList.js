@@ -17,7 +17,7 @@ const BackdropOnList = ({image,dropKey, upButtonClick, downButtonClik}) => (
         <button className = "buttons" onClick = { () => upButtonClick(dropKey)}>UP</button>
         <h3 style={{color: 'white', textAlign: 'center'}}>{dropKey}</h3>
         <button className = "buttons"  onClick ={() => downButtonClik(dropKey)}>DOWN</button>
-    
+        
         </div>
     </div>
   
