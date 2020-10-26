@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { hot } from 'react-hot-loader';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Presentation from './Presentation';
@@ -18,8 +18,14 @@ const IntroLink = props => {
 
     const [user, setUser] = useState("");
     const [enroll,setenroll] = useState(false);
+    const [noUser,setNoUser] = useState("");
 
 
+    useEffect(() => {
+        setenroll()
+    },[user])
+
+    
     const handleSubmit = (evt) => {
         evt.preventDefault();
         
@@ -35,6 +41,10 @@ const IntroLink = props => {
             }
             );
         });
+        if(!enroll){
+            console.log("notfound")
+            setNoUser("not user was found")
+        }
     }
 
     return(
@@ -51,6 +61,9 @@ const IntroLink = props => {
          </label>
         <input type="submit" value="Submit" />
         </form>       
+        <div>
+        <h3>{noUser}</h3>
+        </div>
 
         
 
