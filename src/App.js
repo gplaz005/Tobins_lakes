@@ -20,7 +20,7 @@ const App = () => (
         <BrowserRouter>
         <Switch>
         <Route exact path="/" component={IntroLink}/>
-        <Route exact path= "/intro/:id" component = {Intro} />
+        <Route exact path= "/intro" component = {Intro} />
         <Route path= "/presentation" component = {Presentation} />
         <Route path= "/ShowTime" component = {ShowTime} />
         </Switch>

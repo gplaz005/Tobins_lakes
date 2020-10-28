@@ -1,13 +1,7 @@
-import {Link} from 'react-router-dom';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState } from 'react';
 import { hot } from 'react-hot-loader';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Presentation from './Presentation';
-import Nav from './Nav';
-import Intro from './Intro';
 import './App.scss';
 import './firebase/config';
-import NavToIntro from './NavToIntro';
 
 import {firestore} from './firebase/config';
 import firebase from 'firebase/app';
@@ -25,9 +19,7 @@ const IntroLink = props => {
     const [noUser,setNoUser] = useState("");
 
 
-    useEffect(() => {
-        setenroll()
-    },[user])
+    
 
     
     const handleSubmit = (evt) => {
@@ -40,9 +32,10 @@ const IntroLink = props => {
                 if(doc.data().userName == user){
                     //console.log("found")
                     //console.log(UserId);
-                    setUserId("25")
-                    props.history.push(`/Intro/${doc.id}`);
+                    setUserId(doc.id)
                     setenroll(true);
+                    //props.history.push(`/Intro/${doc.id}`);
+                    props.history.push("/Intro");
                 }
             }
             );

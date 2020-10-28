@@ -5,7 +5,7 @@ export const UserContext = React.createContext();
 //export const SetUserContext = React.createContext();
 
 export const UserProvider = props => {
-    const [UserId, setUserId] = useState("2");
+    const [UserId, setUserId] = useState();
 
 
     //const values = [UserId, setUserId]
