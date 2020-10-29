@@ -33,9 +33,9 @@ const Intro = () => {
 
     return(
     <div className = "AppBack">
-        <img src ={tblogo} className = "logoHome" />
         
-        <div className = "welcome">
+        
+        <div className = "welcomeIntro">
             <h2>Hello {nameOfUser}, the show is about to start!</h2>
         
         </div>

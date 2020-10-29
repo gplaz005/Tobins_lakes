@@ -8,6 +8,8 @@ import firebase from 'firebase/app';
 
 import {useUserId} from './firebase/UserProvider';
 
+import tblogo from './pictures/tblogo.png';
+
 
 
 const IntroLink = props => {
@@ -42,16 +44,19 @@ const IntroLink = props => {
         });
         if(!enroll){
             console.log("notfound")
-            setNoUser("not user was found")
+            setNoUser('not user was found \nUser name is case sensitive \nTry again or Contact Us')
         }
     }
 
     return(
     
-        <div>
+        <div className = "IntroBack">
+            <img src ={tblogo} className = "logoHome" />
+       
+        <div className = "welcomeBooth">
         <form onSubmit={handleSubmit}>
         <label>
-            Frirst Name:
+            User Name:
             <input
             type="text"
             value={user}
@@ -59,10 +64,14 @@ const IntroLink = props => {
             />
          </label>
         <input type="submit" value="Submit" />
-        </form>       
+        </form>
+        </div>
+        <div className = "welcomeAlert">
+        <h3>{noUser}</h3>
+        </div>       
+        
         <div>
         <h3>{UserId}</h3>
-        <h3>{noUser}</h3>
         </div>
 
         
