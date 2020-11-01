@@ -1,9 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
-    mode: 'development',
+    mode: 'production',
     
     module: {
         rules: [
@@ -51,5 +53,11 @@ module.exports = {
         hotOnly: true,
         historyApiFallback: true,
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [new webpack.HotModuleReplacementPlugin(),
+        
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+          title: 'Production',
+        }),
+    ]
 };
