@@ -2,11 +2,6 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { hot } from 'react-hot-loader';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import snow from './pictures/snow.png';
-import snow2 from './pictures/snow2.png';
-import snow3 from './pictures/snow3.png';
-import snow4 from './pictures/snow4.png';
-import snow5 from './pictures/snow5.png';
 import reel from './pictures/reel.png';
 import './App.scss';
 import NavToShow from './NavToShow'; //router
@@ -17,15 +12,18 @@ import BackdropOnList from './BackdropOnList';
 import './firebase/config';
 
 
-const Presentation = ({backdrops}) => {
 
+const Presentation = ({backdrops}) => {
     
+    
+    console.log(backdrops);
     return(
         
-
+        
     <div className ="presentation">
         
         <div className = "presentationTitle">  <h1>Backdrops Sequence</h1>
+    
         </div>
         <div className = "welcomeLink">
         <Router>
@@ -33,7 +31,7 @@ const Presentation = ({backdrops}) => {
         <Route path= "/ShowTime" component = {ShowTime} />
         </Router>
         </div>
-        
+
             <div className = "imageStyle" >
             <img src ={reel} height = "80" width = "600" />
             {backdrops.map((ki, index)=>

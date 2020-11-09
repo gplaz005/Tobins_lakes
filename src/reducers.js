@@ -1,15 +1,6 @@
-import snow from './pictures/snow.png';
-import snow2 from './pictures/snow2.png';
-import snow3 from './pictures/snow3.png';
-import snow4 from './pictures/snow4.png';
-import snow5 from './pictures/snow5.png';
 import {BUTTON_UP, BUTTON_DOWN } from './actions';
 
-//const [backdropsInit, setBackdrops] = useState([snow,snow2,snow3,snow4,snow5]);
-
-let backdropss = [snow,snow2,snow3,snow4,snow5];
-
-export const backdrops = (state = backdropss, action) => {
+export const backdrops = (state = [] , action) => {
     const { type, payload } = action;
 
     switch (type) {
