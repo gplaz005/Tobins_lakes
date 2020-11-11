@@ -1,9 +1,16 @@
-import {BUTTON_UP, BUTTON_DOWN } from './actions';
+import {BUTTON_UP, BUTTON_DOWN, FILL_ARRAY } from './actions';
 
 export const backdrops = (state = [] , action) => {
     const { type, payload } = action;
 
     switch (type) {
+
+    case FILL_ARRAY:{
+      var probarray = payload;
+      var state = probarray
+      return state;
+      
+    }
     case BUTTON_UP: {
         var number  = payload;
         var position = number.index

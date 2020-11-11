@@ -9,3 +9,9 @@ export const buttonDown = index => ({
     type: BUTTON_DOWN,
     payload: { index },
 });
+
+export const FILL_ARRAY = 'FILL_ARRAY';
+export const fillarray = index => ({
+    type: FILL_ARRAY,
+    payload: index ,
+});
