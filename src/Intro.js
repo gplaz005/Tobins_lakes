@@ -17,9 +17,10 @@ const Intro = ({backdrops, onFillArray}) => {
     
     //getting user from firebase
     const [nameOfUser, setNameofUser] = useState();
-
+    const [Nobackdrops, setNoBackdrops] = useState();
     const [UserId, setUserId] = useUserId();
 
+    let actualDate = new Date()
     let backdropsarray = []
     let backdropsId = []
 
@@ -45,12 +46,15 @@ const Intro = ({backdrops, onFillArray}) => {
     //getting backdrops from firebase to redux store
     
     const getBackdrops = async () => {
-
+        let timeDueObject
         //get first user backdrops Id's
     const docRef = firebase.firestore().collection("users").doc(UserId);
     await docRef.get().then(function(doc) {
         if (doc.exists) {
             backdropsId = doc.data().Abackdrops
+            timeDueObject = doc.data().due.toDate()
+            console.log(timeDueObject)
+            console.log(actualDate)
             console.log("backdrop ids getter")
         } else {
             // doc.data() will be undefined in this case
@@ -61,11 +65,13 @@ const Intro = ({backdrops, onFillArray}) => {
     });
     console.log(backdropsId)
 
+    if(actualDate < timeDueObject){
+        console.log("you are on time")
     //get backdrops from list of ids
     var storageRef = firebase.storage().ref();
     var imagesRef = storageRef.child('images');
 
-    for(let i = 0; i < backdropsId.length; i++){
+        for(let i = 0; i < backdropsId.length; i++){
         console.log(backdropsId[i])
         await imagesRef.child(backdropsId[i]).getDownloadURL().then(function(url) {
             backdropsarray = [...backdropsarray, url]
@@ -73,9 +79,12 @@ const Intro = ({backdrops, onFillArray}) => {
         }).catch(function(error) {
         console.log("not right backdrop id")
         });
+        }
+    }else{
+        setNoBackdrops("you have no Backdrops to show")
     }
-    
     console.log(backdropsarray)
+    // this function send backdrops to redux store
     onFillArray(backdropsarray)
     }
  
@@ -91,14 +100,18 @@ const Intro = ({backdrops, onFillArray}) => {
         <div className = "welcomeIntro">
             <h2>Hello {nameOfUser}, the show is about to start!</h2>
             
-        
         </div>
+        
         <div >
+        
         <Router>
         <Nav/>
         <Route path= "/presentation" component = {Presentation} />
         </Router>
         </div>
+        <div className ="presentationTitle">
+            <h4>{Nobackdrops}</h4>
+            </div>
     </div>
     )
     
