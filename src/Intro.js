@@ -17,9 +17,11 @@ const Intro = ({backdrops, onFillArray}) => {
     
     //getting user from firebase
     const [nameOfUser, setNameofUser] = useState();
+
     const [UserId, setUserId] = useUserId();
 
     let backdropsarray = []
+    let backdropsId = []
 
 
     const getUser = async () =>{
@@ -43,28 +45,40 @@ const Intro = ({backdrops, onFillArray}) => {
     //getting backdrops from firebase to redux store
     
     const getBackdrops = async () => {
-        var storageRef = firebase.storage().ref();
 
+        //get first user backdrops Id's
+    const docRef = firebase.firestore().collection("users").doc(UserId);
+    await docRef.get().then(function(doc) {
+        if (doc.exists) {
+            backdropsId = doc.data().Abackdrops
+            console.log("backdrop ids getter")
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document (userId)!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+    console.log(backdropsId)
+
+    //get backdrops from list of ids
+    var storageRef = firebase.storage().ref();
     var imagesRef = storageRef.child('images');
-     await imagesRef.child('01.png').getDownloadURL().then(function(url) {
-        backdropsarray = [url]
-        
-    }).catch(function(error) {
-    // Handle any errors
-    });
 
-     await imagesRef.child('02.png').getDownloadURL().then(function(url) {
-        backdropsarray = [...backdropsarray, url]
-    }).catch(function(error) {
-    // Handle any errors
-    });
+    for(let i = 0; i < backdropsId.length; i++){
+        console.log(backdropsId[i])
+        await imagesRef.child(backdropsId[i]).getDownloadURL().then(function(url) {
+            backdropsarray = [...backdropsarray, url]
+            
+        }).catch(function(error) {
+        console.log("not right backdrop id")
+        });
+    }
     
     console.log(backdropsarray)
     onFillArray(backdropsarray)
     }
-
-    
-    
+ 
     useEffect(() =>{
         getUser()
         getBackdrops()
